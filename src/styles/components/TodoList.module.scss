@@ -1,0 +1,7 @@
+@use '../base/variables' as vars;
+
+.listGroup {
+  display: block;
+  margin: 1em 0;
+  border-radius: vars.$border-radius;
+}

@@ -1,0 +1,24 @@
+@use '../base/variables' as vars;
+@use '../base/buttons';
+
+.todoItem {
+  display: flex;
+  border-bottom: 1px solid lightgrey;
+
+  > input[type='checkbox'] {
+    margin-left: 1em;
+  }
+  .title {
+    margin: auto auto auto 1em;
+  }
+  .deleteBtn {
+    @include buttons.base-button(red);
+    background-color: red;
+    color: white;
+    margin: 0.5em 1em;
+  }
+}
+
+.checked {
+  background-color: rgb(130, 225, 255);
+}

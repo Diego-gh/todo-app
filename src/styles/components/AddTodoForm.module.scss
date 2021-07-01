@@ -1,0 +1,14 @@
+@use '../base/buttons';
+
+.todoForm {
+  > input[type='text'] {
+    margin-right: 0.5em;
+    padding: 0.5em;
+  }
+
+  .submitBtn {
+    @include buttons.base-button(dodgerblue);
+    background-color: dodgerblue;
+    color: white;
+  }
+}

@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import AddTodoForm from './components/AddTodoForm';
+import TodoList from './components/TodoList';
+import TotalItems from './components/TotalItems';
+import { getTodos } from './redux/todoSlice';
+import css from './styles/pages/App.module.scss';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getTodos());
+    // eslint-disable-next-line
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={css.container}>
+      <h1>My Todo List</h1>
+      <AddTodoForm />
+      <TodoList />
+      <TotalItems />
     </div>
   );
 }
-
 export default App;
